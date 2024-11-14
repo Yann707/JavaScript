@@ -1,19 +1,16 @@
-let number = parseInt(prompt("Enter a number:"));
-let isPrime = true;
+let numbers = [2, 7, 4, 9, 13, 16, 8];
 
-if (number <= 1) {
-  isPrime = false;
-} else {
-  for (let i = 2; i <= Math.sqrt(number); i++) {
-    if (number % i === 0) {
-      isPrime = false;
-      break;
+function even(arr) {
+    let evenNumbers = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            evenNumbers.push(arr[i]);
+        }
     }
-  }
+    return evenNumbers;
 }
 
-if (isPrime) {
-  document.write(`${number} is a prime number.`);
-} else {
-  document.write(`${number} is not a prime number.`);
-}
+let evennumbers = even(numbers);
+
+console.log("Original array:", numbers);
+console.log("Even numbers array:", evennumbers);
