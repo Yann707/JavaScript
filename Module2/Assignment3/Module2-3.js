@@ -1,11 +1,14 @@
-let num1 = parseInt(prompt("Enter the first number:"));
-let num2 = parseInt(prompt("Enter the second number:"));
-let num3 = parseInt(prompt("Enter the third number:"));
+let dogs = [];
 
-let sum = num1 + num2 + num3;
-let product = num1 * num2 * num3;
-let average = sum / 3;
+for (let i = 0; i < 6; i++) {
+    dogs.push(prompt("Enter the name of dog " + (i + 1) + ":"));
+}
 
-document.write(`Sum: ${sum}`);
-document.write(`Product: ${product}`);
-document.write(`Average: ${average}`);
+dogs.sort().reverse();
+
+let listHtml = "<ul>";
+for (let i = 0; i < dogs.length; i++) {
+    listHtml += "<li>" + dogs[i] + "</li>";
+}
+listHtml += "</ul>";
+document.body.innerHTML += listHtml;

@@ -1,10 +1,16 @@
-if (confirm("Should I calculate the square root?")) {
-  let number = parseFloat(prompt("Enter a number:"));
-  if (number >= 0) {
-    document.write(`Square root: ${Math.sqrt(number)}`);
-  } else {
-    document.write("The square root of a negative number is not defined.");
-  }
-} else {
-  document.write("The square root is not calculated.");
+let result = document.createElement("ul");
+
+function rollDice() {
+    return Math.floor(Math.random() * 6) + 1;
 }
+
+let roll;
+do {
+    roll = rollDice();
+
+    let list = document.createElement("li");
+    list.textContent = "Rolled: " + roll;
+    result.appendChild(list);
+} while (roll !== 6);
+
+document.body.appendChild(result);

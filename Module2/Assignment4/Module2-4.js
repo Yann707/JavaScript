@@ -1,20 +1,11 @@
-let name = prompt("Enter your name:");
-let house = Math.floor(Math.random() * 4) + 1;
+let Numbers = "";
 
-let assignedHouse;
-switch (house) {
-  case 1:
-    assignedHouse = "Gryffindor";
-    break;
-  case 2:
-    assignedHouse = "Slytherin";
-    break;
-  case 3:
-    assignedHouse = "Hufflepuff";
-    break;
-  case 4:
-    assignedHouse = "Ravenclaw";
-    break;
+while (true) {
+    let num = parseInt(prompt("Enter a number or enter 0 to stop:"));
+    if (num === 0) break;
+
+    Numbers = num + " " + Numbers;
 }
 
-document.write(`${name}, you are ${assignedHouse}.`);
+// 在控制台打印结果
+console.log("Numbers in descending order:", Numbers);

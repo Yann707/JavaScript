@@ -1,10 +1,15 @@
-let startYear = parseInt(prompt("Enter the start year:"));
-let endYear = parseInt(prompt("Enter the end year:"));
+let words = ["Johnny", "DeeDee", "Joey", "Marky"];
 
-document.write("<ul>");
-for (let year = startYear; year <= endYear; year++) {
-  if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-    document.write(`<li>${year}</li>`);
-  }
+function concat(arr) {
+    let result = "";
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
+    }
+    return result;
 }
-document.write("</ul>");
+
+let concatenated = concat(words);
+
+let resultParagraph = document.createElement("p");
+resultParagraph.textContent = "String: " + concatenated;
+document.body.appendChild(resultParagraph);
