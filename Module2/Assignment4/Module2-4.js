@@ -7,5 +7,4 @@ while (true) {
     Numbers = num + " " + Numbers;
 }
 
-// 在控制台打印结果
 console.log("Numbers in descending order:", Numbers);
