@@ -1,16 +1,11 @@
-let Count = parseInt(prompt("Enter the number of participants:"));
-let participants = [];
+document.getElementById("search").onsubmit = function (event) {
+    event.preventDefault();
+    const query = document.getElementById("query").value; // Get the input value
 
-for (let i = 0; i < Count; i++) {
-    participants.push(prompt("Enter the name of participant " + (i + 1) + ":"));
-}
-
-participants.sort();
-
-let listHtml = "<ol>";
-for (let i = 0; i < participants.length; i++) {
-    listHtml += "<li>" + participants[i] + "</li>";
-}
-listHtml += "</ol>";
-
-document.body.innerHTML += listHtml;
+    fetch(`https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error("Error:", error));
+};
