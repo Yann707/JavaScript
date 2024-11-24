@@ -6,10 +6,10 @@ let successCount = 0;
 for (let i = 0; i < trials; i++) {
     let sum = 0;
     for (let j = 0; j < numDice; j++) {
-        sum += Math.floor(Math.random() * 6) + 1;  // Roll each die and add the result to sum
+        sum += Math.floor(Math.random() * 6) + 1;
     }
     if (sum === targetSum) {
-        successCount++;  // Count if the sum matches the target
+        successCount++;
     }
 }
 
